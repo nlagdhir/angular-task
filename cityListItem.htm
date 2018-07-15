@@ -1,0 +1,10 @@
+<div class="col-sm-6 col-md-4">
+<img width="60" height="60" src="https://www.metaweather.com/static/img/weather/{{$ctrl.city.stateIcon}}.svg">	
+<span><b>City Name:</b> {{$ctrl.city.name}}</span><br>
+<span><b>Temperature:</b> {{$ctrl.city.whether.toFixed(1)}}</span><br>
+<span><b>Maximum Temperature:</b> {{$ctrl.city.minW.toFixed(1)}}</span><br>
+<span><b>Minimum temperature: </b>{{$ctrl.city.maxW.toFixed(1)}}</span><br>
+
+<button class="btn btn-primary" ng-click="getDetailsPage($ctrl.city.id)">Details</button>
+
+</div>

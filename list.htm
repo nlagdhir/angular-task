@@ -1,0 +1,30 @@
+
+<div class="jumbotron mt-3">
+        <h1>Weather App</h1>
+        <p class="lead">This is demo weather app.</p>
+        <div class="input-group">
+		  <input type="text" ng-model="searchValue" class="form-control" placeholder="City Name..." aria-describedby="basic-addon2">
+		  <a class="input-group-addon" href="javascript:void(0)" id="basic-addon2" ng-click="searchPage()">Search</a>
+		</div>
+
+</div>
+ 
+<div  ng-init="getList()">
+<div ng-if="!isLoaded">
+		<span ng-if="msg">{{msg}}</span>
+		<span style="margin-left: 50%;" ng-if="!msg"><img src="http://gifimage.net/wp-content/uploads/2018/04/loader-gif-transparent-background-11.gif" width="50"> Loading..</span>
+</div>
+
+
+<div ng-if="isLoaded">
+	<div ng-if="!cityListObj">
+		No results were found. Try changing the keyword!
+	</div>
+	<div ng-if="cityListObj.length">
+		<div class="row">
+			<weather ng-repeat="city in cityListObj" city="city"></weather>
+		</div>
+	</div>
+</div>	
+
+</div>
